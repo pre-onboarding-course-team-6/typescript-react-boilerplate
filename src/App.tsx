@@ -1,10 +1,31 @@
 import React from 'react';
-import './App.css';
+import styled from 'styled-components';
+import Box from './components/box';
 
-const a: string = 'hello world';
+type ActiveType = {
+  active: boolean;
+};
 
-function App() {
-  return <div className="App">{a}</div>;
-}
+const CustomContainer = styled.div<ActiveType>`
+  background: ${(props) => {
+    return props.theme.color.black;
+  }};
+
+  color: ${(props) => {
+    if (props.active) {
+      return 'white';
+    }
+    return '#eee';
+  }};
+`;
+
+const App: React.FC = () => {
+  return (
+    <CustomContainer active={false}>
+      <span>styled-components css test</span>
+      <Box></Box>
+    </CustomContainer>
+  );
+};
 
 export default App;
