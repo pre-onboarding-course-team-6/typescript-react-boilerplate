@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Box: React.FC = () => {
-  return <div>hey</div>;
+  return <div>Box</div>;
 };
 
 export default Box;
